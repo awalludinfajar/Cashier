@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: aegis
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/data-produk
+    username: root
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: mappings
+
+jwt:
+  refreshExpirationMs: 360000000
+  expirationMs: 3600000
+  secret: TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gRG9uZWMgc3VzY2lwaXQgdml0YWUgcXVhbSBhYyB0ZW1wdXMuIEludGVnZXIgdXQgdnVscHV0YXRlIG1hZ25hLCB1dCBzYWdpdHRpcyBsaWJlcm8uIFNlZCBzZWQgbWV0dXMgZXJhdC4gTnVsbGEgc3VzY2lwaXQgbGVjdHVzIHNhcGllbiwgZXUgcHJldGl1bSBtaSBzb2xsaWNpdHVkaW4gdml0YWUuIFZpdmFtdXMgZWxlaWZlbmQgYXVjdG9yIHZvbHV0cGF0LiBVdCB1bHRyaWNlcyB0aW5jaWR1bnQgdHVycGlzIGV0IGF1Y3Rvci4gU2VkIGNvbnZhbGxpcywgc2FwaWVuIHV0IGV1aXNtb2QgaGVuZHJlcml0LCBlcmF0IHB1cnVzIGFsaXF1ZXQgdG9ydG9yLCBlZ2V0IHZhcml1cyB1cm5hIG1pIGlkIHNlbS4gUHJhZXNlbnQgY29uc2VjdGV0dXIgb3JuYXJlIGVuaW0sIGluIGFsaXF1YW0gbmVxdWUgdWx0cmljaWVzIHF1aXMuIFN1c3BlbmRpc3NlIHV0IGR1aSB0dXJwaXMuIFByb2luIGF0IG9kaW8gZWdlc3Rhcywgc3VzY2lwaXQgbWV0dXMgY29tbW9kbywgbWF4aW11cyBudWxsYS4gVXQgdGVtcG9yLCBlc3QgYSB0cmlzdGlxdWUgZGFwaWJ1cywgbGlndWxhIHJpc3VzIGF1Y3RvciBuZXF1ZSwgaW4gbG9ib3J0aXMgZXN0IGRvbG9yIGVnZXQgZW5pbS4=
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
